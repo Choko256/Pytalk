@@ -14,9 +14,10 @@
 
 import os
 import sys
+from gui import mgr
 
 def pytalk():
-	pass
+	mgr.PyTalkGUIManager.create_main_window()
 	
 if __name__ == "__main__":
 	pytalk()
