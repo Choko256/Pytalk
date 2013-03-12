@@ -17,6 +17,6 @@ class GUIManager:
 		
 		if GUIMainWindow is None:
 			GUIMainWindow = win.GUIMainWindow()
-			# GUIMainWindow.show()
+			GUIMainWindow.show_all()
 			
 		gtk.main()

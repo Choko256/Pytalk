@@ -13,6 +13,7 @@ class GUIMainWindow(gtk.Window):
 		self.set_position(gtk.WIN_POS_CENTER)
 	
 		self.init_gui()
+		# self.show_all()
 		
 	def init_gui(self):
 		self.connect("delete_event", self.__on_window_closing)
@@ -39,12 +40,10 @@ class GUIMainWindow(gtk.Window):
 		vbox_menu.pack_start(self.mbar, False, False, 0)
 		
 		self.add(vbox_menu)
-		self.show_all()
 		
 	def __on_window_closing(self, widget, event, data = None):
 		return False
 		
 	def open_configure(self, widget):
-		print "* Opening Configuration Frame..."
 		cfg = frame.GUIConfigFrame(self)
-		
+		cfg.show_all()		
