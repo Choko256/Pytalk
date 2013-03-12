@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MyBot>
+	<Profiles>
+		<Profile id="default">
+			<Name>Profil par défaut</Name>
+			<Version>{% APPLICATION_NAME %} {% APPLICATION_VERSION %} - {% APPLICATION_COPYRIGHT %} Release {% APPLICATION_RELEASE_DATE %}.</Version>
+			<Configuration>
+				<Servers>
+					<!--<Server name="EpiKnet">
+						<Host>irc.epiknet.org</Host> <Port>6667</Port> 
+						<Encoding>UTF-8</Encoding> <SSL>False</SSL> <Password></Password> 
+						<UserInfo>
+							<Nickname>ChokoBot</Nickname>
+							<Username>ChokoBot</Username>
+							<Realname>ChokoBot</Realname>
+							<Ident>ChokoBot</Ident>
+							<NickServ>atl310antiks257</NickServ>
+						</UserInfo>
+						<AutoJoin>
+							<Channel name="#LePaysDesZarbis" key="" />
+							<Channel name="#hugland" key="" />
+							<Channel name="#mango" key="" />
+							<Channel name="#MondeLibre" key="" />
+							<Channel name="#ennuie" key="" />
+							<Channel name="#Folie" key="" />
+						</AutoJoin>
+						<WelcomeMessage>Bienvenue sur {% channel %}, {% nickname %} !</WelcomeMessage>
+					</Server>-->
+					<Server name="ChakSoft">
+						<Host>irc.chaksoft.fr</Host>
+						<Port>6667</Port>
+						<Encoding>UTF-8</Encoding>
+						<SSL>False</SSL>
+						<Password></Password>
+						<UserInfo>
+							<Nickname>ChokoBotTest</Nickname>
+							<AlternativeNickname>ChokoBotTest2</AlternativeNickname>
+							<Username>ChokoBotTest</Username>
+							<Realname>ChokoBotTest</Realname>
+							<Ident>ChokoBot</Ident>
+							<NickServ></NickServ>
+						</UserInfo>
+						<AutoJoin>
+							<Channel name="#Test" key="" />
+							<!--<Channel name="#Home" key="" />-->
+							<!--<Channel name="#jeux" key="" />-->
+						</AutoJoin>
+						<WelcomeMessage>ChakSoft te souhaite la bienvenue sur {% channel %}, {% nickname %} !</WelcomeMessage>
+					</Server>
+				</Servers>
+			</Configuration>
+		</Profile>
+	</Profiles>
+</MyBot>
