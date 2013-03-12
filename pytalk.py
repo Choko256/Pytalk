@@ -17,7 +17,7 @@ import sys
 from gui import mgr
 
 def pytalk():
-	mgr.PyTalkGUIManager.create_main_window()
+	mgr.GUIManager.create_main_window()
 	
 if __name__ == "__main__":
 	pytalk()
