@@ -6,8 +6,9 @@ import gtk
 from gui import frame
 
 class GUIMainWindow(gtk.Window):
-	def __init__(self):
+	def __init__(self, config):
 		gtk.Window.__init__(self, gtk.WINDOW_TOPLEVEL)
+		self.config = config
 		self.set_title("PyTalk V1.0")
 		self.resize(640, 480)
 		self.set_position(gtk.WIN_POS_CENTER)
@@ -45,5 +46,5 @@ class GUIMainWindow(gtk.Window):
 		return False
 		
 	def open_configure(self, widget):
-		cfg = frame.GUIConfigFrame(self)
+		cfg = frame.GUIConfigFrame(self, self.config)
 		cfg.show_all()		

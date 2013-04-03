@@ -3,21 +3,31 @@
 # GUI Frames module
 
 import gtk
+import gobject
+from lib import irc, core
 
 class GUIConfigMainTabFrame(gtk.Frame):
-	def __init__(self):
+	def __init__(self, config):
 		gtk.Frame.__init__(self)
-		self.set_border_width(8)
+		self.config = config
+		self.set_border_width(3)
 		self.init_gui()
 		self.show_all()
 		
 	def init_gui(self):
-		pass
+		hbox = gtk.HBox(False, 2)
+		store = gtk.ListStore(gobject.TYPE_STRING, irc.Server)
+		
+		profile = self.config.get_info()[0]['cfg']
+		for srv in profile:
+			store.append([srv, profile[srv])
+		
 
 class GUIConfigFrame(gtk.Window):
-	def __init__(self, parent):
+	def __init__(self, parent, config):
 		gtk.Window.__init__(self, type=gtk.WINDOW_TOPLEVEL)
 		# self.set_parent(parent)
+		self.config = config
 		self.set_modal(True)
 		self.set_title("PyTalk Configuration")
 		self.resize(400, 300)
@@ -33,8 +43,8 @@ class GUIConfigFrame(gtk.Window):
 		self.tabs = gtk.Notebook()
 		self.tabs.set_tab_pos(gtk.POS_TOP)
 		
-		mpage = GUIConfigMainTabFrame()
-		self.tabs.append_page(mpage, gtk.Label("Main"))
+		mpage = GUIConfigMainTabFrame(self.config)
+		self.tabs.append_page(mpage, gtk.Label("Servers"))
 		
 		btn_ok = gtk.Button("OK")
 		btn_ok.connect("clicked", self.__on_ok_clicked)
